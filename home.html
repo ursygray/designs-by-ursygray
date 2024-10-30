@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Designs by Ursula Gray</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,100,400,700&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="2024_style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- -------------- Navigation Bar -------------- -->
+
+<header>
+    <div class="container">
+        <div class="site-header">
+        <h1 style="margin-bottom: 0;""><a href="home.html" style="text-decoration: none; color: #333;" alt="Home">Ursula Gray</a></h1>
+        <h2><a href="home.html" style="text-decoration: none; color: #333;" alt="Home">Designer & Illustrator</a></h2>
+        </div>
+    </div>
+</div>
+</header>
+
+<!-- -------------- Main Body Content -------------- -->
+
+<main>
+    <div class="container">
+        <!-- Filter Buttons -->
+        <div class="filter-buttons mb-4">
+            <button class="btn btn-primary" onclick="filterCards('all')">Show All</button>
+            <button class="btn btn-primary" onclick="filterCards('illustration')">Illustration</button>
+            <button class="btn btn-primary" onclick="filterCards('graphic design')">Graphic Design</button>
+        </div>
+        <div class="row">
+            <div class="col-md-6" id="column1">
+            </div>
+            <div class="col-md-6" id="column2">
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- -------------- Footer -------------- -->
+
+<div class="about">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3 mb-4 d-flex justify-content-center align-items-center">
+            <img src="img/ursula-gray-pfp-2024_circle.png" style="width: 100%;">
+        </div>
+        <div class="col-md-9 d-flex align-items-center">
+            <div>
+            <h3>About</h3>
+            <p>Hi, I'm Ursula Gray! I'm a graphic designer and illustrator with 7+ years in B2B marketing for SaaS startups. I do webcomics on the side, and occassionally illustrate book covers.</p>
+            <p>Want to work together? Send me an email at <a href="mailto:ursula.ea.gray@gmail.com">ursula.ea.gray@gmail.com</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<footer>
+    <div class="container text-center mt-4">
+        <p class="mb-4">&copy; 2024 Ursula Gray</p>
+        <p class="mb-4"><a href="https://www.linkedin.com/in/ursula-gray/">LinkedIn</a> | <a href="https://www.behance.net/ursygray">Behance</a></p>
+    </div>
+</footer>
+
+<!-- -------------- Bootstrap Script -------------- -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    let columnCounter = 0;
+
+    function addCard(imageSrc, linkHref, title, tags) {
+        const column1 = document.getElementById('column1');
+        const column2 = document.getElementById('column2');
+
+        const cardHtml = `
+            <div class="card mb-4" data-tags="${tags}">
+                <a href="${linkHref}">
+                    <img class="card-img-top" src="${imageSrc}">
+                    <div class="overlay">
+                        <div class="card-title">${title}</div>
+                    </div>
+                </a>
+            </div>
+        `;
+
+        if (columnCounter % 2 === 0) {
+            column1.insertAdjacentHTML('beforeend', cardHtml);
+        } else {
+            column2.insertAdjacentHTML('beforeend', cardHtml);
+        }
+
+        columnCounter++;
+    }
+
+    function filterCards(tag) {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            if (tag === 'all') {
+                card.style.display = 'block';
+            } else {
+                if (card.getAttribute('data-tags').includes(tag)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+    }
+
+    // Example usage
+    addCard( 'img/i-spade-you-cover_v2.png', 'i-spade-you.html', 'I Spade You: An Asexual Anthology', 'illustration');
+    addCard( 'img/Nursing_E-Book_2024.png', 'how-psychometrics-transforms-nursing-ebook.html', 'From Problems to Progress: How Psychometrics Transforms Nursing', 'graphic design');
+    addCard( 'img/Big_Text_Ads_2024.png', 'plum-big-text-ads.html', 'Plum Big Text Ads', 'graphic design');
+    addCard( 'img/Social_2023_Cover.png', 'social-media-graphics-2021-2024.html', 'Social Media Graphics (2021-2024)', 'graphic design');
+    addCard( 'img/Sizzle_Reels.png', 'plum-sizzle-reel-2023.html', 'Plum Sizzle Reel 2023', 'graphic design');
+    addCard( 'img/Plum_Scholarship_Promotional_Resources_Social_1080x1080.png', 'plum-scholarship-campaign.html', 'Plum Scholarship Campaign', 'graphic design');
+    addCard( 'img/Employee_Spotlight.png', 'employee-talent-spotlight-campaign.html', 'Employee Talent Spotlight Campaign', 'graphic design');
+    addCard( 'img/Google_Ads_2022.png', 'plum-google-ads-2022.html', 'Plum Google Ads (2022)', 'graphic design');
+    addCard( 'img/Blogs_Cover.png', 'blog-illustrations-2018-2022.html', 'Blog Illustrations (2018-2022)', 'illustration');
+    addCard( 'img/victorylap_cover_v2.png', 'victory-lap.html', 'Victory Lap', 'illustration');
+    addCard( 'img/candexp_2020_cover.png', 'guide-to-candidate-experience-2020.html', 'The 2020 Guide to Candidate Experience', 'graphic design');
+    addCard( 'img/17.png', 'blog-illustrations-2017-2018.html', 'Blog Illustrations (2017-2018)', 'illustration');
+    addCard( 'img/moonlight_example_cover_2.jpg', 'moonlight.html', 'Moonlight: A Queer Werewolf Anthology', 'illustration');
+    addCard( 'img/16.png', 'chalk-branding.html', 'Chalk Branding', 'graphic design');
+</script>
+
+</body>
+</html>
