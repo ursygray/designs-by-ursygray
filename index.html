@@ -1,136 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Designs by Ursula Gray</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,100,400,700&display=swap" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="2024_style.css" rel="stylesheet">
-</head>
+    <meta name="author" content="Ursula Gray">
+    <title>Portfolio | Ursula Gray</title>
 
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- STYLE SHEET -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
 <body>
 
-<!-- -------------- Navigation Bar -------------- -->
-
-<header>
-    <div class="container">
-        <div class="site-header">
-        <h1 style="margin-bottom: 0;""><a href="home.html" style="text-decoration: none; color: #333;" alt="Home">Ursula Gray</a></h1>
-        <h2><a href="home.html" style="text-decoration: none; color: #333;" alt="Home">Designer & Illustrator</a></h2>
+<!-- HEADER -->
+ <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="img/ug-logo.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html#Gallery">Graphic Design</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </div>
+            </div>
         </div>
-    </div>
-</div>
-</header>
+    </nav>
+ </header>
 
-<!-- -------------- Main Body Content -------------- -->
 
-<main>
-    <div class="container">
-        <!-- Filter Buttons -->
-        <div class="filter-buttons mb-4">
-            <button class="btn btn-primary" onclick="filterCards('all')">Show All</button>
-            <button class="btn btn-primary" onclick="filterCards('illustration')">Illustration</button>
-            <button class="btn btn-primary" onclick="filterCards('graphic design')">Graphic Design</button>
-        </div>
+
+<!-- MAIN CONTENT -->
+ <main>
+    <section class="hero">
         <div class="row">
-            <div class="col-md-6" id="column1">
-            </div>
-            <div class="col-md-6" id="column2">
-            </div>
+            <figure class="heroImg col-lg-6">
+                <img src="img/hero-image.png" alt="" class="img-fluid">
+            </figure>
+            <figure class="col-lg-6">
+                <div class="heroBlurb">
+                    <h1>I'm Ursula Gray, a graphic designer and illustrator specializing in branding design.</h1>
+                    <p>With a background in illustration, sequential art, and B2B SaaS startups, I'm always looking for my next design challenge.</p>
+                    <!-- <a href="#Gallery"><button class="btn btn-primary">Check Out My Work</button></a> -->
+                </div>
+            </figure>
         </div>
-    </div>
-</main>
+    </section>
+    <section id="Gallery">
+        <h2 class="text-center">Work</h2>
+        <div class="workGallery">
 
-<!-- -------------- Footer -------------- -->
-
-<div class="about">
-    <div class="container">
-    <div class="row">
-        <div class="col-md-3 mb-4 d-flex justify-content-center align-items-center">
-            <img src="img/ursula-gray-pfp-2024_circle.png" style="width: 100%;">
-        </div>
-        <div class="col-md-9 d-flex align-items-center">
-            <div>
-            <h3>About</h3>
-            <p>Hi, I'm Ursula Gray! I'm a graphic designer and illustrator with 7+ years in B2B marketing for SaaS startups. I do webcomics on the side, and occassionally illustrate book covers.</p>
-            <p>Want to work together? Send me an email at <a href="mailto:ursula.ea.gray@gmail.com">ursula.ea.gray@gmail.com</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<footer>
-    <div class="container text-center mt-4">
-        <p class="mb-4">&copy; 2024 Ursula Gray</p>
-        <p class="mb-4"><a href="https://www.linkedin.com/in/ursula-gray/">LinkedIn</a> | <a href="https://www.behance.net/ursygray">Behance</a></p>
-    </div>
-</footer>
-
-<!-- -------------- Bootstrap Script -------------- -->
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-    let columnCounter = 0;
-
-    function addCard(imageSrc, linkHref, title, tags) {
-        const column1 = document.getElementById('column1');
-        const column2 = document.getElementById('column2');
-
-        const cardHtml = `
-            <div class="card mb-4" data-tags="${tags}">
-                <a href="${linkHref}">
-                    <img class="card-img-top" src="${imageSrc}">
-                    <div class="overlay">
-                        <div class="card-title">${title}</div>
+            <!-- Card 1 -->
+            <a href="/restaurant-menu.html">
+                <div class="galleryCard card">
+                    <div class="imgContainer">
+                        <img src="img/menu-cover.jpg" alt="" class="card-img-top">
                     </div>
-                </a>
-            </div>
-        `;
+                    <div class="card-body">
+                        <h3 class="cardTitle">Foxglove & Mystic Restaurant Menu <img src="img/chevron-right-solid.svg" alt=""></h3>
+                    </div>
+                </div>
+            </a>
 
-        if (columnCounter % 2 === 0) {
-            column1.insertAdjacentHTML('beforeend', cardHtml);
-        } else {
-            column2.insertAdjacentHTML('beforeend', cardHtml);
-        }
+            <!-- Card 2 -->
+            <a href="/scholarship-campaign.html">
+                <div class="galleryCard card">
+                    <div class="imgContainer">
+                        <img src="img/plum-cover.jpg" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="cardTitle">Plum Scholarship Campaign <img src="img/chevron-right-solid.svg" alt=""></h3>
+                    </div>
+                </div>
+            </a>
 
-        columnCounter++;
-    }
+            <!-- Card 3 -->
+            <a href="/music-album.html">
+                <div class="galleryCard card">
+                    <div class="imgContainer">
+                        <img src="img/album-cover.jpg" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="cardTitle">Ella Gudel Music Album <img src="img/chevron-right-solid.svg" alt=""></h3>
+                    </div>
+                </div>
+            </a>
 
-    function filterCards(tag) {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            if (tag === 'all') {
-                card.style.display = 'block';
-            } else {
-                if (card.getAttribute('data-tags').includes(tag)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            }
-        });
-    }
+            <!-- Card 4 -->
+            <a href="/packaging-design.html">
+                <div class="galleryCard card">
+                    <div class="imgContainer">
+                        <img src="img/packaging-cover.jpg" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="cardTitle">Packaging Design <img src="img/chevron-right-solid.svg" alt=""></h3>
+                    </div>
+                </div>
+            </a>
 
-    // Example usage
-    addCard( 'img/Nursing_E-Book_2024.png', 'how-psychometrics-transforms-nursing-ebook.html', 'From Problems to Progress: How Psychometrics Transforms Nursing', 'graphic design');
-    addCard( 'img/Big_Text_Ads_2024.png', 'plum-big-text-ads.html', 'Plum Big Text Ads', 'graphic design');
-    addCard( 'img/Social_2023_Cover.png', 'social-media-graphics-2021-2024.html', 'Social Media Graphics (2021-2024)', 'graphic design');
-    addCard( 'img/Plum_NAHRES_booth_1.JPEG', 'plum-booth-2023.html', 'Plum NAHRES Booth 2023', 'graphic design');
-    addCard( 'img/Sizzle_Reels.png', 'plum-sizzle-reel-2023.html', 'Plum Sizzle Reel 2023', 'graphic design');
-    addCard( 'img/Plum_Scholarship_Promotional_Resources_Social_1080x1080.png', 'plum-scholarship-campaign.html', 'Plum Scholarship Campaign', 'graphic design');
-    addCard( 'img/Employee_Spotlight.png', 'employee-talent-spotlight-campaign.html', 'Employee Talent Spotlight Campaign', 'graphic design');
-    addCard( 'img/Google_Ads_2022.png', 'plum-google-ads-2022.html', 'Plum Google Ads (2022)', 'graphic design');
-    addCard( 'img/Blogs_Cover.png', 'blog-illustrations-2018-2022.html', 'Blog Illustrations (2018-2022)', 'illustration');
-    addCard( 'img/candexp_2020_cover.png', 'guide-to-candidate-experience-2020.html', 'The 2020 Guide to Candidate Experience', 'graphic design');
-    addCard( 'img/17.png', 'blog-illustrations-2017-2018.html', 'Blog Illustrations (2017-2018)', 'illustration');
-    addCard( 'img/16.png', 'chalk-branding.html', 'Chalk Branding', 'graphic design');
-</script>
+            <!-- Card 5 -->
+            <a href="/unicorn-potluck-branding.html">
+                <div class="galleryCard card">
+                    <div class="imgContainer">
+                        <img src="img/unicorn-cover.jpg" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="cardTitle">Unicorn Potluck Branding <img src="img/chevron-right-solid.svg" alt=""></h3>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 6 -->
+            <a href="/ad-campaign.html">
+                <div class="galleryCard card">
+                    <div class="imgContainer">
+                        <img src="img/ad-cover.jpg" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="cardTitle">Humane Canada Ad Campaign <img src="img/chevron-right-solid.svg" alt=""></h3>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 7 -->
+            <a href="/stellar-branding.html">
+                <div class="galleryCard card">
+                    <div class="imgContainer">
+                        <img src="img/stellar-cover.jpg" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="cardTitle">Stellar Cloud Storage Branding <img src="img/chevron-right-solid.svg" alt=""></h3>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 8 -->
+            <a href="#">
+                <div class="galleryCard card">
+                    <div class="imgContainer">
+                        <img src="img/wayfinder-cover.jpg" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="cardTitle">Wayfinder Fitness Brochure <img src="img/chevron-right-solid.svg" alt=""></h3>
+                    </div>
+                </div>
+            </a>
+
+
+        </div>
+    </section>
+ </main>
+
+<!-- FOOTER -->
+ <footer>
+    <section class="mainContainer">
+        <div class="row">
+            <section class="col-8">
+                <p>Copyright &copy; 2026 Ursula Gray</p>
+            </section>
+            <section class="col-4 text-end">
+                <a href="#"><img src="img/square-linkedin-brands-solid.svg" class="socialIcon"></a>
+                <a href="#"><img src="img/square-behance-brands-solid.svg" class="socialIcon"></a>
+            </section>
+        </div>
+    </section>
+ </footer>
+    
+<!-- JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </body>
 </html>
